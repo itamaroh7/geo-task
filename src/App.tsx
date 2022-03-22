@@ -1,17 +1,13 @@
 import React from 'react';
 import {ReactComponent as Logo} from './logo.svg';
 import './App.css';
+import MainPage from './pages/MainPage'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Logo className="App-logo"/>
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-          Best of luck on your task!
-        </p>
-      </header>
+    <div >
+      <h4>Information via Auroras.live</h4>
+      <MainPage/>
     </div>
   );
 }

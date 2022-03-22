@@ -45,3 +45,13 @@
     transform: translateY(-60px) ;
   }
 }
+
+.container{
+  position: relative;
+}
+.overlay_image{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: transparent;
+}
