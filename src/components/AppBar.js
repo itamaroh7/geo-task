@@ -10,6 +10,7 @@ function AppBarComp(){
     const nav = useNavigate()
 
   const handleCloseNavMenu = (page) => {
+    //Get page and navigate to it
     setAnchorElNav(null);
     if(page=='Map')
     {

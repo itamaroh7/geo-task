@@ -17,6 +17,7 @@ function MapComp(){
     },[storeData.location])
 
     const pixelsToLongLat=(x,y)=>{
+        //Get x,y coordinates as image pixels and convert it to longitude and latitude
         var mapWidth=720
         var mapHeight=610
         var longi = ((360*x)-(180*mapWidth))/mapWidth
@@ -26,15 +27,16 @@ function MapComp(){
     }
 
     const LongitudeToPixel=(long)=>{
+        //Get longitude and convert it to location on the map image
         console.log("long: "+long)
         var mapWidth=720
         var x = (Math.abs((long*mapWidth))/360.0)
-        //var x = (long+180)*(mapWidth/360.0)
         console.log(x)
         return x
     }
 
     const LatitudeToPixel=(lat)=>{
+        //Get latitude and convert it to location on the map image
         console.log("lat: "+lat)
         var mapHeight=610
         var mapWidth=720
@@ -47,6 +49,7 @@ function MapComp(){
     }
 
     const replaceCursorLocation=(event)=>{
+        //Replace the location cursor to the new click point
         event.preventDefault()
         var rect = event.target.getBoundingClientRect();
         var x = event.clientX - rect.left;
