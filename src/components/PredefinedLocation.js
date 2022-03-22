@@ -1,6 +1,6 @@
 import { FormControl, InputLabel, MenuItem, Select, Typography,Box } from "@mui/material"
 import {useSelector,useDispatch} from 'react-redux'
-import {useEffect, useState} from 'react'
+import { useState} from 'react'
 
 function PredefinedLocationComp(){
 
@@ -10,6 +10,7 @@ function PredefinedLocationComp(){
 
     const handleLocationChanged=(event)=>{
         setLocation(event.target.value)
+        document.getElementById('loc-cursor').style.visibility='hidden'
         dispatch({type:'SELECTEDLOCATION',payload:event.target.value})
     }
 

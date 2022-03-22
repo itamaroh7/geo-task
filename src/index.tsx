@@ -6,15 +6,17 @@ import reportWebVitals from './reportWebVitals';
 import {createStore} from 'redux'
 import {Provider} from 'react-redux'
 import reducer from './reducer/reducer'
+import {BrowserRouter} from 'react-router-dom'
+
 const appStore=createStore(reducer)
 
 
 ReactDOM.render(
-  <React.StrictMode>
+  <BrowserRouter>
     <Provider store={appStore}>
       <App />
     </Provider>
-  </React.StrictMode>,
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

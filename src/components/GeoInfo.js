@@ -1,5 +1,4 @@
-import { Grid,Box, Container, Typography } from "@mui/material"
-import MapComp from "./MapComp"
+import { Typography } from "@mui/material"
 import {useSelector} from 'react-redux'
 
 function GeoInfoComp(){
@@ -9,7 +8,7 @@ function GeoInfoComp(){
 
     return(
         <Typography>
-            Longitude: {storeData.geoInfo.longitude} Latitude: {storeData.geoInfo.latitude}
+           <b> Longitude:</b> {storeData.geoInfo.longitude} <b>Latitude:</b> {storeData.geoInfo.latitude}
         </Typography>
     )
 

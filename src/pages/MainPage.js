@@ -1,15 +1,14 @@
 import { Grid,Box, Container } from "@mui/material"
 import { useEffect } from "react"
-import GeoInfoComp from "./GeoInfo"
-import MapComp from "./MapComp"
+import GeoInfoComp from "../components/GeoInfo"
+import MapComp from "../components/MapComp"
 import reqFromAurora from '../apirest/ReqFromAurora'
-import {useDispatch,useSelector} from 'react-redux'
-import PredefinedLocationComp from "./PredefinedLocation"
-import AuroraInfoComp from "./AuroraInfo"
+import {useDispatch} from 'react-redux'
+import PredefinedLocationComp from "../components/PredefinedLocation"
+import AuroraInfoComp from "../components/AuroraInfo"
 
 function MainPageComp(){
     const dispatch = useDispatch()
-    const storeData = useSelector(state=>state)
 
     useEffect(async()=>{
         let response=await reqFromAurora.getPredLocations()
@@ -19,6 +18,7 @@ function MainPageComp(){
             arrLocations.push(data[i.toString()])
         }
         dispatch({type:'INITPREDLOCATIONS',payload:arrLocations})
+        dispatch({type:'GEOINFO',payload:{longitude:0,latitude:0}})
     },[])
 
     return(
@@ -27,13 +27,13 @@ function MainPageComp(){
                 <Grid container direction="row"  >
                     <Grid direction="column" >
                         <Grid item>
-                            <Box sx={{backgroundColor:'red'}}>
+                            <Box >
                                 <MapComp/>
                             </Box>
 
                         </Grid>
                         <Grid item>
-                            <Box  sx={{backgroundColor:'yellow'}}>
+                            <Box  >
                                 <GeoInfoComp/>
                             </Box>
                         </Grid>
@@ -45,7 +45,7 @@ function MainPageComp(){
                             </Box>
                         </Grid>
                         <Grid item>
-                            <Box  sx={{backgroundColor:'yellow'}}>
+                            <Box  sx={{backgroundColor:'#c9fdff'}}>
                                 <AuroraInfoComp/>
                             </Box>
                         </Grid>

@@ -2,7 +2,6 @@ import { Paper } from "@mui/material";
 import map from '../assets/map.jpg';
 import locationimg from '../assets/location-image.jpg';
 import {useSelector,useDispatch} from 'react-redux'
-import reqFromAurora from '../apirest/ReqFromAurora'
 import { useEffect } from "react";
 
 function MapComp(){
@@ -59,6 +58,7 @@ function MapComp(){
     }
 
     const handleMapClicked=(event)=>{
+        document.getElementById('loc-cursor').style.visibility='visible'
         replaceCursorLocation(event);
     }
 
